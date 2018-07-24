@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户添加</title>
+{#    <link rel="stylesheet" href="/static/test.css" type="text/css"/>#}
+    <link rel="stylesheet" href="{{ url_for('static',filename='test.css') }}" type="text/css"/>
+</head>
+<body>
+    {% if err %}
+    <span style="color:red">{{ err }}<br></span> 
+    {% endif %}
+    
+    <form action="/user/create/" method="post">
+        username <input type="text" name="username" value={{ username }}> 
+        <br>
+        password <input type="password" name="password" value={{ password }}> 
+        <br>
+        age      <input type="text" name="age" value={{ age }}> 
+        <br>
+        gender   <input type="radio" name="gender" value="1" checked="checked"> 男
+                 <input type="radio" name="gender" value="0" > 女 
+        <br>         
+        hobby    <input type="checkbox" name="hobby" value="football" checked="checked"> 足球
+                 <input type="checkbox" name="hobby" value="basketball">  篮球
+                 <input type="checkbox" name="hobby" value="computer"> 计算机 
+        <br>
+        dpt      <select name="department">
+                    <option value="dept01" selected="selected">研发一部</option>
+                    <option value="dept01">研发二部</option>
+                    <option value="dept01">研发三部</option>
+                    <option value="dept01">测试一部</option>
+                    <option value="dept01">测试二部</option>
+                </select> 
+        <br>
+        备注      <textarea name="remark">
+                </textarea>
+        <br>
+        file <input type="file" name="文件">
+        <br>
+        image <img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2784916716,2742991748&fm=58">
+        <input type="submit" value="添加">
+        <br>
+        <span style="border:1px solid red;background-color: blue;color:white;">span1</span>
+        <span>span2</span>
+        <span>span3</span>
+        <span>span4</span>
+        <div id="myid" class="mydiv">div1</div>
+        <div class="mydiv">div2</div>
+        <div>div3</div>
+        <p>p1</p>
+    </form>
+</body>
+</html>

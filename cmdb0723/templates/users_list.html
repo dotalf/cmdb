@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    {% for msg in get_flashed_messages() %}
+    <span>{{ msg }}</span>
+    {% endfor %}
+    <a href="/user/add/">添加用户</a> {# 链接到用户添加功能 #}
+    欢迎{{ session.get('user',{}).get('username',{}) }}
+    <a href="/logout/">退出</a>
+
+<div class="container-fluid">
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>年龄</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.get('id') }}</td>
+            <td>{{ user.get('username') }}</td>
+            <td>{{ '*********' }}</td>
+            <td>{{ user.get('age') }}</td>
+            <td>
+                <a href="/user/modify/?id={{ user.get('id') }}">修改</a>
+                <a href="/user/drop/?id={{ user.get('id') }}">删除</a> {# 注意{{  }}和=之间，不要有空格！！！否则传递的值也会带空格 #}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+</tbody>
+</div>
+</body>
+</html>

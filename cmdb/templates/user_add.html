@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户添加</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+{% if err %}
+    <span style="color:red">{{ err }}<br></span>
+{% endif %}
+
+<form action="/user/create/" method="post" class="form-inline">
+    <div class="form-group">
+        <label for="username">用户名</label>
+        <input type="text" class="form-control" id="username" name="username" value="{{ username }}">
+    </div>
+    <div class="form-group">
+        <label for="password">密码</label>
+        <input type="password" class="form-control" id="password" name="password" value="{{ password }}">
+    </div>
+    <div class="form-group">
+        <label for="age">年龄</label>
+        <input type="text" class="form-control" id="age" name="age" value="{{ age }}">
+    </div>
+    <button type="submit" class="btn btn-default">添加</button>
+</form>
+</body>
+</html>

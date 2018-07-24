@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<head>
+
+<body>
+    <a href="/log/file_import/">日志文件上传</a>
+<div class="container-fluid">
+    <table class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>URL</th>
+                <th>CODE</th>
+                <th>CNT</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for node in rt_list %}
+            <tr>
+                <td> {{ node[0]  }}</td>
+                <td> {{ node[1]  }}</td>
+                <td> {{ node[2]  }}</td>
+                <td> {{ node[3]  }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

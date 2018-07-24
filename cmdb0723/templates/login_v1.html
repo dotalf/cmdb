@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <form action="/login/" method="post" class="form-inline">
+        {% if err %}
+        <span style="color:red">{{ err }}</span>
+        {% endif %}
+        <br>
+        <div class="form_group">
+            <label for="username">username:</label>
+            <input type="text" class="form-control" name="username" id="username" value="{{ username }}" placeholder="Username">
+        </div>
+        <div class="form_group">
+            <label for="password">password:</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-default">Login</button>
+{#        username <input type="text" name="username"  value= "{{ username }}" />#}
+{#        password <input type="password" name="password" />#}
+{#        <input type="submit" value="登录">#}
+    </form>
+</body>
+</html>
